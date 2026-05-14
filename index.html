@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillConnect India - Connecting Skilled Professionals</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  /* ========================================
+   SkillConnect India - Main Stylesheet
+   Modern Premium UI with Glassmorphism
+   ======================================== */
+
+/* ==================== RESET & VARIABLES ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --primary: #FF6B35;
+  --secondary: #004E89;
+  --accent: #1ABC9C;
+  --light: #F8F9FA;
+  --dark: #1a1a1a;
+  --gray: #6c757d;
+  --white: #ffffff;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8C5A 100%);
+  --gradient-secondary: linear-gradient(135deg, #004E89 0%, #0080B8 100%);
+  --gradient-accent: linear-gradient(135deg, #1ABC9C 0%, #16D4C4 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.2);
+  
+  /* Typography */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-mono: 'Courier New', monospace;
+  
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--dark);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+h4 {
+  font-size: 1.25rem;
+  color: var(--dark);
+}
+
+p {
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--gradient-secondary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-accent {
+  background: var(--gradient-accent);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar-menu a {
+  color: var(--dark);
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--white);
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+  }
+
+  .navbar-menu.active {
+    max-height: 500px;
+  }
+
+  .navbar-menu li {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--light);
+  }
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+  background: linear-gradient(135deg, rgba(0, 78, 137, 0.1) 0%, rgba(26, 188, 156, 0.1) 100%);
+  padding: 100px 2rem;
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(26, 188, 156, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 10;
+  animation: slideUp 0.8s ease-out;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==================== CONTAINER ==================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ==================== SECTIONS ==================== */
+section {
+  padding: 80px 2rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==================== CARDS ==================== */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.card-subtitle {
+  color: var(--gray);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.star {
+  color: #FFC107;
+}
+
+/* ==================== SERVICE CARDS ==================== */
+.service-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+}
+
+.service-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.service-card:hover .service-img-container img {
+  transform: scale(1.1);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.badge-available {
+  background: #27AE60;
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+}
+
+.badge-busy {
+  background: #E74C3C;
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.service-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.service-category {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.service-experience {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.service-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.service-desc {
+  color: var(--gray);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.service-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.service-actions .btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ==================== GRID LAYOUTS ==================== */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ==================== FEATURED SECTION ==================== */
+.featured {
+  background: linear-gradient(135deg, rgba(0, 78, 137, 0.05) 0%, rgba(26, 188, 156, 0.05) 100%);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* ==================== WHY CHOOSE US ==================== */
+.why-us {
+  background: var(--white);
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.why-us-item {
+  text-align: center;
+  padding: 2rem;
+}
+
+.why-us-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* ==================== STATS SECTION ==================== */
+.stats {
+  background: var(--gradient-secondary);
+  color: var(--white);
+  padding: 60px 2rem;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.stat-item p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+/* ==================== TESTIMONIALS ==================== */
+.testimonials {
+  background: var(--light);
+}
+
+.testimonial-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: var(--dark);
+  color: var(--white);
+  padding: 3rem 2rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+}
+
+.footer-section a:hover {
+  color: var(--primary);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==================== FILTER BUTTONS ==================== */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==================== FORM STYLES ==================== */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--light);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-error {
+  color: #E74C3C;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* ==================== PAYMENT PAGE ==================== */
+.payment-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.payment-card {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow-lg);
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.card-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.card-chip {
+  width: 50px;
+  height: 40px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.card-number {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  font-family: var(--font-mono);
+  position: relative;
+  z-index: 10;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+.card-holder,
+.card-expiry {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.payment-form {
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.payment-form h3 {
+  margin-bottom: 1.5rem;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.payment-method {
+  flex: 1;
+  min-width: 120px;
+  padding: 1rem;
+  border: 2px solid var(--light);
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.payment-method:hover,
+.payment-method.active {
+  border-color: var(--primary);
+  background: rgba(255, 107, 53, 0.05);
+}
+
+/* ==================== PAYMENT SUCCESS ==================== */
+.success-container {
+  text-align: center;
+  padding: 60px 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  animation: bounce 1s ease-in-out;
+}
+
+.success-message h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 3rem;
+}
+
+.transaction-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.transaction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light);
+}
+
+.transaction-row:last-child {
+  border-bottom: none;
+}
+
+.transaction-label {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.transaction-value {
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.transaction-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ==================== MODAL ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gray);
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--dark);
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.hidden {
+  display: none;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  z-index: 999;
+}
+
+.scroll-to-top.show {
+  display: flex;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .hero {
+    padding: 60px 1rem;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    gap: 0.5rem;
+  }
+
+  section {
+    padding: 40px 1rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .payment-container {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero {
+    padding: 40px 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 30px 1rem;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-container {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <span>🎯</span>
+        SkillConnect India
+      </div>
+      <button class="navbar-toggle">☰</button>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hire Trusted Skilled Professionals Across India</h1>
+      <p>Connect with experienced developers, designers, marketers, and more. Find the perfect professional for your project today.</p>
+      <div class="hero-buttons">
+        <a href="services.html" class="btn btn-primary">Explore Services</a>
+        <a href="contact.html" class="btn btn-outline">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PROFESSIONALS ==================== -->
+  <section class="featured">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Professionals</h2>
+        <p>Meet our top-rated skilled professionals ready to bring your vision to life</p>
+      </div>
+      <div class="featured-grid">
+        <div class="card">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/branding%20expert%20girl-ebdHsniNRzhLFk1B6YnccwzA8KiKrn.png" alt="Priya Sharma" class="card-img">
+          <h4 class="card-title">Priya Sharma</h4>
+          <p class="card-subtitle">Graphic Designer</p>
+          <div class="card-rating">
+            <span class="star">★★★★★</span>
+            <span>4.8 (245 reviews)</span>
+          </div>
+          <p>Creative graphic designer specializing in brand identity and visual communication.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/web%20developer%20boy-ysksptHqOEAq3SiwH3EjE1t4hri3gh.png" alt="Rajesh Verma" class="card-img">
+          <h4 class="card-title">Rajesh Verma</h4>
+          <p class="card-subtitle">Web Developer</p>
+          <div class="card-rating">
+            <span class="star">★★★★★</span>
+            <span>4.9 (312 reviews)</span>
+          </div>
+          <p>Full-stack web developer with 7 years of experience in modern technologies.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/digital%20marketer%20girl-hnqzqdGKUi01tZHrw75447SP8y1ZCC.png" alt="Arjun Singh" class="card-img">
+          <h4 class="card-title">Arjun Singh</h4>
+          <p class="card-subtitle">Digital Marketing</p>
+          <div class="card-rating">
+            <span class="star">★★★★★</span>
+            <span>4.6 (278 reviews)</span>
+          </div>
+          <p>Digital marketing expert focused on ROI-driven growth strategies.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frontend%20developer%20boy-g3LEeJNFq7l1VEReArMJYkXRryGFgL.png" alt="Vikram Reddy" class="card-img">
+          <h4 class="card-title">Vikram Reddy</h4>
+          <p class="card-subtitle">Frontend Developer</p>
+          <div class="card-rating">
+            <span class="star">★★★★★</span>
+            <span>4.9 (356 reviews)</span>
+          </div>
+          <p>Expert in React, Vue, and modern frontend frameworks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CHOOSE US ==================== -->
+  <section class="why-us">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose SkillConnect India?</h2>
+        <p>We provide a seamless platform connecting quality professionals with your needs</p>
+      </div>
+      <div class="why-us-grid">
+        <div class="why-us-item">
+          <div class="why-us-icon">🔍</div>
+          <h4>Vetted Professionals</h4>
+          <p>All professionals are thoroughly verified and rated by clients.</p>
+        </div>
+        <div class="why-us-item">
+          <div class="why-us-icon">💰</div>
+          <h4>Competitive Pricing</h4>
+          <p>Transparent pricing with no hidden charges. Pay only for services used.</p>
+        </div>
+        <div class="why-us-item">
+          <div class="why-us-icon">⏱️</div>
+          <h4>Quick Turnaround</h4>
+          <p>Fast project delivery with professional quality standards.</p>
+        </div>
+        <div class="why-us-item">
+          <div class="why-us-icon">🛡️</div>
+          <h4>Secure Platform</h4>
+          <p>Safe transactions and confidential project information.</p>
+        </div>
+        <div class="why-us-item">
+          <div class="why-us-icon">👥</div>
+          <h4>Expert Network</h4>
+          <p>Access to a diverse pool of skilled professionals across India.</p>
+        </div>
+        <div class="why-us-item">
+          <div class="why-us-icon">📞</div>
+          <h4>24/7 Support</h4>
+          <p>Round-the-clock customer support for all your needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATISTICS ==================== -->
+  <section class="stats">
+    <div class="stats-container">
+      <div class="section-title" style="color: white; margin-bottom: 3rem;">
+        <h2 style="color: white; -webkit-background-clip: unset; -webkit-text-fill-color: unset; background: unset;">Our Impact</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3 data-target="5000">5000+</h3>
+          <p>Active Professionals</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-target="15000">15000+</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-target="25000">25000+</h3>
+          <p>Satisfied Clients</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-target="50">50+</h3>
+          <p>Service Categories</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED CATEGORIES ==================== -->
+  <section class="featured">
+    <div class="container">
+      <div class="section-title">
+        <h2>Popular Service Categories</h2>
+        <p>Explore our diverse range of professional services</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">💻</div>
+          <h4 style="text-align: center;">Web Development</h4>
+          <p style="text-align: center; color: var(--gray);">Custom websites and web applications</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🎨</div>
+          <h4 style="text-align: center;">Graphic Design</h4>
+          <p style="text-align: center; color: var(--gray);">Brand identity and visual design</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">📱</div>
+          <h4 style="text-align: center;">App Development</h4>
+          <p style="text-align: center; color: var(--gray);">Mobile apps for iOS and Android</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">📊</div>
+          <h4 style="text-align: center;">Digital Marketing</h4>
+          <p style="text-align: center; color: var(--gray);">SEO, SEM, and content strategy</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🎬</div>
+          <h4 style="text-align: center;">Video Editing</h4>
+          <p style="text-align: center; color: var(--gray);">Professional video production</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">✏️</div>
+          <h4 style="text-align: center;">Content Writing</h4>
+          <p style="text-align: center; color: var(--gray);">Blogs, articles, and copywriting</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🎯</div>
+          <h4 style="text-align: center;">UI/UX Design</h4>
+          <p style="text-align: center; color: var(--gray);">User experience and interface design</p>
+        </div>
+        <div class="card">
+          <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🔍</div>
+          <h4 style="text-align: center;">SEO Services</h4>
+          <p style="text-align: center; color: var(--gray);">Search engine optimization</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>What Our Clients Say</h2>
+        <p>Real feedback from satisfied customers</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="testimonial-card">
+          <div style="margin-bottom: 1rem;">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"SkillConnect India helped me find the perfect web developer for my startup. The quality and professionalism were outstanding!"</p>
+          <p class="testimonial-author">- Akshay Patel, Startup Founder</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div style="margin-bottom: 1rem;">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"The platform made it easy to hire a designer for my brand. Fast process, great communication, and amazing results!"</p>
+          <p class="testimonial-author">- Neha Gupta, Business Owner</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div style="margin-bottom: 1rem;">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Best platform for finding skilled professionals. The vetting process is rigorous and the support team is always helpful."</p>
+          <p class="testimonial-author">- Rahul Kumar, Marketing Manager</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA SECTION ==================== -->
+  <section class="featured" style="text-align: center;">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 2rem;">Find the right professional for your next project today</p>
+      <a href="services.html" class="btn btn-primary">Browse All Professionals</a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About SkillConnect</h4>
+        <p>Connecting talented professionals with clients across India. We believe in quality, transparency, and professional excellence.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Graphic Design</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="services.html">App Development</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="footer-social">
+          <a href="#" class="social-icon">f</a>
+          <a href="#" class="social-icon">𝕏</a>
+          <a href="#" class="social-icon">in</a>
+          <a href="#" class="social-icon">📷</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SkillConnect India. All rights reserved. | Privacy Policy | Terms of Service</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top">↑</button>
+<script>
+/* ========================================
+   SkillConnect India - Main JavaScript
+   Interactive Features & Functionality
+   ======================================== */
+
+// ==================== SERVICE DATA ====================
+const serviceProviders = [
+  {
+    id: 1,
+    name: 'Priya Sharma',
+    category: 'Graphic Design',
+    experience: '5 years',
+    rating: 4.8,
+    reviews: 245,
+    description: 'Creative graphic designer specializing in brand identity',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/branding%20expert%20girl-ebdHsniNRzhLFk1B6YnccwzA8KiKrn.png'
+  },
+  {
+    id: 2,
+    name: 'Rajesh Verma',
+    category: 'Web Development',
+    experience: '7 years',
+    rating: 4.9,
+    reviews: 312,
+    description: 'Full-stack web developer with modern tech stack expertise',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/web%20developer%20boy-ysksptHqOEAq3SiwH3EjE1t4hri3gh.png'
+  },
+  {
+    id: 3,
+    name: 'Ananya Patel',
+    category: 'Graphic Design',
+    experience: '4 years',
+    rating: 4.7,
+    reviews: 189,
+    description: 'UI/UX designer with eye for beautiful and functional designs',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/graphic%20designer%20girl-478MEjki1h1jyVhbRqLnOk3FoXVKuy.png'
+  },
+  {
+    id: 4,
+    name: 'Arjun Singh',
+    category: 'Digital Marketing',
+    experience: '6 years',
+    rating: 4.6,
+    reviews: 278,
+    description: 'Digital marketing expert focused on ROI and growth strategies',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/digital%20marketer%20girl-hnqzqdGKUi01tZHrw75447SP8y1ZCC.png'
+  },
+  {
+    id: 5,
+    name: 'Vikram Reddy',
+    category: 'Web Development',
+    experience: '8 years',
+    rating: 4.9,
+    reviews: 356,
+    description: 'Frontend developer with expertise in React and modern frameworks',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/frontend%20developer%20boy-g3LEeJNFq7l1VEReArMJYkXRryGFgL.png'
+  },
+  {
+    id: 6,
+    name: 'Neha Gupta',
+    category: 'App Development',
+    experience: '5 years',
+    rating: 4.8,
+    reviews: 234,
+    description: 'Mobile app developer specializing in iOS and Android',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/app%20developer%20boy-Rm5VfTLGSHnT9pTIukH040vnSUDS6I.png'
+  },
+  {
+    id: 7,
+    name: 'Sanjay Kumar',
+    category: 'Web Development',
+    experience: '9 years',
+    rating: 4.9,
+    reviews: 401,
+    description: 'Backend developer with database and API expertise',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/backend%20developer%20boy-hNh2xQ1AegTn1fHO4NrYGSOSgSFoNQ.png'
+  },
+  {
+    id: 8,
+    name: 'Divya Nair',
+    category: 'Content Writing',
+    experience: '4 years',
+    rating: 4.7,
+    reviews: 167,
+    description: 'Content strategist and writer for blogs and marketing materials',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/content%20girl-p6Cy7hLinBggxuk3yHwdpyTqrUVt6J.png'
+  },
+  {
+    id: 9,
+    name: 'Rohan Desai',
+    category: 'Web Design',
+    experience: '6 years',
+    rating: 4.8,
+    reviews: 289,
+    description: 'Web designer creating stunning and responsive websites',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/web%20designer%20boy-DFLHd1WjLXsvPMitJoNItIJU2hUwPn.png'
+  },
+  {
+    id: 10,
+    name: 'Meera Iyer',
+    category: 'UI/UX Design',
+    experience: '5 years',
+    rating: 4.8,
+    reviews: 223,
+    description: 'UI/UX designer focused on user-centered design principles',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ui%20designer%20girl-Wc47SLRSnGnL1GMbjg3Z7JYn4edGyE.png'
+  },
+  {
+    id: 11,
+    name: 'Harsh Bhat',
+    category: 'Web Development',
+    experience: '7 years',
+    rating: 4.9,
+    reviews: 342,
+    description: 'Full-stack developer proficient in multiple technologies',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/full%20stack%20boy-Stb0b1X1SY507IcJiGWYAx1R1tvzku.png'
+  },
+  {
+    id: 12,
+    name: 'Pooja Malhotra',
+    category: 'Digital Marketing',
+    experience: '5 years',
+    rating: 4.7,
+    reviews: 198,
+    description: 'Social media and content marketing specialist',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/social%20media%20manager%20girl-0qciCKdotkZtxndtxDwHBut0UGDUMq.png'
+  },
+  {
+    id: 13,
+    name: 'Karan Negi',
+    category: 'SEO',
+    experience: '6 years',
+    rating: 4.8,
+    reviews: 267,
+    description: 'SEO expert helping businesses rank higher on Google',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/seo%20boy-qvLwSfsOq0TwOwbH6u3laiSjk4tQhS.png'
+  },
+  {
+    id: 14,
+    name: 'Isha Tiwari',
+    category: 'UI/UX Design',
+    experience: '4 years',
+    rating: 4.7,
+    reviews: 145,
+    description: 'Designing beautiful user experiences for web and mobile',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ui%20designer%20girl0-jRwYUP8hUsOfy0nOAADBVGwEx8Hwvy.png'
+  },
+  {
+    id: 15,
+    name: 'Aryan Kapoor',
+    category: 'Video Editing',
+    experience: '5 years',
+    rating: 4.8,
+    reviews: 201,
+    description: 'Professional video editor for marketing and entertainment content',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/video%20editor%20boy-KFROCuasgXZs80KRgW7MwB7z99SIL4.png'
+  }
+];
+
+// ==================== DYNAMIC AVAILABILITY ====================
+function getRandomAvailability() {
+  return Math.random() > 0.5 ? 'Available' : 'Busy';
+}
+
+function assignAvailability(providers) {
+  return providers.map(provider => ({
+    ...provider,
+    availability: getRandomAvailability()
+  }));
+}
+
+// ==================== NAVBAR TOGGLE ====================
+document.addEventListener('DOMContentLoaded', function() {
+  const navbarToggle = document.querySelector('.navbar-toggle');
+  const navbarMenu = document.querySelector('.navbar-menu');
+
+  if (navbarToggle) {
+    navbarToggle.addEventListener('click', function() {
+      navbarMenu.classList.toggle('active');
+    });
+
+    // Close menu when link is clicked
+    document.querySelectorAll('.navbar-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        navbarMenu.classList.remove('active');
+      });
+    });
+  }
+
+  // Scroll to top button
+  const scrollBtn = document.querySelector('.scroll-to-top');
+  if (scrollBtn) {
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // Animate counters on home page
+  const counters = document.querySelectorAll('.stat-item h3');
+  let animated = false;
+
+  function animateCounters() {
+    if (!animated) {
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 30;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target + '+';
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current) + '+';
+          }
+        }, 50);
+      });
+      animated = true;
+    }
+  }
+
+  // Trigger animation when stats section is visible
+  const statsSection = document.querySelector('.stats');
+  if (statsSection) {
+    window.addEventListener('scroll', () => {
+      const rect = statsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        animateCounters();
+      }
+    });
+  }
+});
+
+// ==================== SERVICES PAGE ====================
+function renderServices(providers = null, filter = 'All') {
+  const serviceGrid = document.getElementById('serviceGrid');
+  if (!serviceGrid) return;
+
+  let providersToShow = providers || serviceProviders;
+  
+  if (filter !== 'All') {
+    providersToShow = providersToShow.filter(p => p.category === filter);
+  }
+
+  serviceGrid.innerHTML = '';
+
+  providersToShow.forEach(provider => {
+    const badgeClass = provider.availability === 'Available' ? 'badge-available' : 'badge-busy';
+    const buttonText = provider.availability === 'Available' ? 'Hire Now' : 'Notify Me';
+    const buttonClass = provider.availability === 'Available' ? 'btn-primary' : 'btn-outline';
+
+    const card = document.createElement('div');
+    card.className = 'service-card';
+    card.innerHTML = `
+      <div class="service-img-container">
+        <img src="${provider.image}" alt="${provider.name}">
+        <span class="badge ${badgeClass}">${provider.availability}</span>
+      </div>
+      <div class="service-content">
+        <h4 class="service-title">${provider.name}</h4>
+        <div class="service-category">${provider.category}</div>
+        <div class="service-experience">💼 ${provider.experience} experience</div>
+        <div class="service-rating">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span>${provider.rating}</span>
+          <span>(${provider.reviews} reviews)</span>
+        </div>
+        <p class="service-desc">${provider.description}</p>
+        <div class="service-actions">
+          <button class="btn ${buttonClass} btn-sm" onclick="hireProvider('${provider.name}')">${buttonText}</button>
+          <button class="btn btn-secondary btn-sm" onclick="viewProfile('${provider.name}')">View Profile</button>
+        </div>
+      </div>
+    `;
+    serviceGrid.appendChild(card);
+  });
+}
+
+// ==================== FILTER FUNCTIONALITY ====================
+const categories = ['All', 'Web Development', 'Graphic Design', 'Digital Marketing', 'Web Design', 'UI/UX Design', 'App Development', 'Content Writing', 'Video Editing', 'SEO'];
+
+function setupFilters() {
+  const filterContainer = document.getElementById('filterContainer');
+  if (!filterContainer) return;
+
+  categories.forEach(category => {
+    const btn = document.createElement('button');
+    btn.className = `filter-btn ${category === 'All' ? 'active' : ''}`;
+    btn.textContent = category;
+    btn.onclick = () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const providers = assignAvailability(serviceProviders);
+      renderServices(providers, category);
+    };
+    filterContainer.appendChild(btn);
+  });
+}
+
+// ==================== HIRE PROVIDER ====================
+function hireProvider(name) {
+  const modal = document.getElementById('bookingModal');
+  const modalContent = document.querySelector('.modal-content');
+  
+  if (modal) {
+    modal.classList.add('show');
+    const modalBody = modal.querySelector('.modal-body');
+    if (modalBody) {
+      modalBody.innerHTML = `
+        <h3>Book ${name}</h3>
+        <p>You are about to book <strong>${name}</strong> for your project.</p>
+        <p>Redirecting to payment...</p>
+      `;
+    }
+
+    // Redirect to payment page after 2 seconds
+    setTimeout(() => {
+      window.location.href = 'payment.html?provider=' + encodeURIComponent(name);
+    }, 2000);
+  }
+}
+
+// ==================== VIEW PROFILE ====================
+function viewProfile(name) {
+  alert(`Viewing profile of ${name}\n\nFull profile details would load here.`);
+}
+
+// ==================== FORM VALIDATION ====================
+function validateContactForm(event) {
+  event.preventDefault();
+
+  const fullName = document.getElementById('fullName');
+  const email = document.getElementById('email');
+  const subject = document.getElementById('subject');
+  const message = document.getElementById('message');
+
+  let isValid = true;
+
+  // Clear previous errors
+  document.querySelectorAll('.form-error').forEach(el => el.remove());
+
+  // Full Name validation
+  if (!fullName || fullName.value.trim() === '') {
+    showError(fullName, 'Full Name is required');
+    isValid = false;
+  }
+
+  // Email validation
+  if (!email || email.value.trim() === '') {
+    showError(email, 'Email is required');
+    isValid = false;
+  } else if (!isValidEmail(email.value)) {
+    showError(email, 'Please enter a valid email');
+    isValid = false;
+  }
+
+  // Subject validation
+  if (!subject || subject.value.trim() === '') {
+    showError(subject, 'Subject is required');
+    isValid = false;
+  }
+
+  // Message validation
+  if (!message || message.value.trim() === '') {
+    showError(message, 'Message is required');
+    isValid = false;
+  } else if (message.value.trim().length < 10) {
+    showError(message, 'Message must be at least 10 characters');
+    isValid = false;
+  }
+
+  if (isValid) {
+    showSuccessMessage('Message sent successfully! We will contact you soon.');
+    document.querySelector('form').reset();
+  }
+}
+
+function showError(element, message) {
+  const errorDiv = document.createElement('div');
+  errorDiv.className = 'form-error';
+  errorDiv.textContent = message;
+  element.parentElement.appendChild(errorDiv);
+  element.style.borderColor = '#E74C3C';
+}
+
+function showSuccessMessage(message) {
+  alert(message);
+}
+
+function isValidEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+// ==================== PAYMENT PAGE ====================
+function setupPaymentPage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const provider = urlParams.get('provider') || 'Service Provider';
+
+  const providerElement = document.getElementById('providerName');
+  if (providerElement) {
+    providerElement.textContent = provider;
+  }
+
+  // Card input handling
+  const cardNumber = document.getElementById('cardNumber');
+  if (cardNumber) {
+    cardNumber.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\s/g, '');
+      let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+      e.target.value = formattedValue;
+    });
+  }
+
+  // Payment method selection
+  const paymentMethods = document.querySelectorAll('.payment-method');
+  paymentMethods.forEach(method => {
+    method.addEventListener('click', function() {
+      paymentMethods.forEach(m => m.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Pay button
+  const payBtn = document.getElementById('payBtn');
+  if (payBtn) {
+    payBtn.addEventListener('click', processPayment);
+  }
+}
+
+function processPayment() {
+  const cardNumber = document.getElementById('cardNumber').value;
+  const cardName = document.getElementById('cardName').value;
+  const cardExpiry = document.getElementById('cardExpiry').value;
+  const cardCVV = document.getElementById('cardCVV').value;
+
+  if (!cardNumber || !cardName || !cardExpiry || !cardCVV) {
+    alert('Please fill all payment details');
+    return;
+  }
+
+  // Simulate payment processing
+  const loadingText = document.querySelector('.btn-primary');
+  const originalText = loadingText.textContent;
+  loadingText.textContent = 'Processing...';
+  loadingText.disabled = true;
+
+  setTimeout(() => {
+    // Redirect to success page
+    window.location.href = 'paymentSuccess.html';
+  }, 2000);
+}
+
+// ==================== PAYMENT SUCCESS PAGE ====================
+function setupPaymentSuccessPage() {
+  // Generate random transaction ID
+  const transactionId = 'TXN' + Date.now() + Math.floor(Math.random() * 1000);
+  const transactionElement = document.getElementById('transactionId');
+  if (transactionElement) {
+    transactionElement.textContent = transactionId;
+  }
+
+  // Set current date and time
+  const dateElement = document.getElementById('transactionDate');
+  if (dateElement) {
+    const now = new Date();
+    dateElement.textContent = now.toLocaleString('en-IN');
+  }
+
+  // Print receipt button
+  const printBtn = document.getElementById('printBtn');
+  if (printBtn) {
+    printBtn.addEventListener('click', printReceipt);
+  }
+
+  // Return to home button
+  const homeBtn = document.getElementById('homeBtn');
+  if (homeBtn) {
+    homeBtn.addEventListener('click', function() {
+      window.location.href = 'index.html';
+    });
+  }
+}
+
+function printReceipt() {
+  const printContent = document.querySelector('.transaction-card').outerHTML;
+  const originalContent = document.body.innerHTML;
+
+  document.body.innerHTML = `
+    <html>
+      <head>
+        <title>Receipt - SkillConnect India</title>
+        <style>
+          body { font-family: Arial, sans-serif; padding: 20px; }
+          h2 { text-align: center; color: #004E89; }
+          .receipt { max-width: 600px; margin: 0 auto; border: 1px solid #ddd; padding: 20px; }
+          .receipt-header { text-align: center; margin-bottom: 20px; }
+          .receipt-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+          .receipt-row:last-child { border-bottom: none; }
+          .receipt-footer { text-align: center; margin-top: 20px; color: #666; }
+        </style>
+      </head>
+      <body>
+        <div class="receipt">
+          <div class="receipt-header">
+            <h2>SkillConnect India</h2>
+            <p>Payment Receipt</p>
+          </div>
+          ${printContent}
+          <div class="receipt-footer">
+            <p>Thank you for using SkillConnect India!</p>
+            <p>For support, contact: support@skillconnect.com</p>
+          </div>
+        </div>
+        <script>
+          window.print();
+          window.onafterprint = function() {
+            window.location.href = 'index.html';
+          };
+        </script>
+      </body>
+    </html>
+  `;
+}
+
+// ==================== MODAL HANDLING ====================
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.remove('show');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Close modal when clicking outside
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('show');
+      }
+    });
+  });
+});
+
+// ==================== PAGE LOAD HANDLERS ====================
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+  // Home page
+  if (currentPage === 'index.html' || currentPage === '') {
+    // Initialize home page
+  }
+
+  // Services page
+  if (currentPage === 'services.html') {
+    const providers = assignAvailability(serviceProviders);
+    renderServices(providers, 'All');
+    setupFilters();
+  }
+
+  // Contact page
+  if (currentPage === 'contact.html') {
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', validateContactForm);
+    }
+  }
+
+  // Payment page
+  if (currentPage === 'payment.html') {
+    setupPaymentPage();
+  }
+
+  // Payment success page
+  if (currentPage === 'paymentSuccess.html') {
+    setupPaymentSuccessPage();
+  }
+});
+
+// ==================== SCROLL ANIMATIONS ====================
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'slideUp 0.6s ease-out forwards';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.card, .service-card, .why-us-item').forEach(el => {
+    observer.observe(el);
+  });
+});
+</script>
+  <script src="js/script.js"></script>
+</body>
+</html>
